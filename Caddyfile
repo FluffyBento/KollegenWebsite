@@ -16,6 +16,55 @@ kollegen.me {
   reverse_proxy /groups* 127.0.0.1:8080
   reverse_proxy /group* 127.0.0.1:8080
   reverse_proxy /call* 127.0.0.1:8080
+  reverse_proxy /store* 127.0.0.1:8080
+
+  # WORLD: Socket.IO path must be preserved (handle vs handle_path).
+  # "handle" keeps the full path prefix; "handle_path" strips it.
+  # Socket.IO requires the exact path to match between client & server.
+  handle /world-socket/* {
+    reverse_proxy 127.0.0.1:4000
+  }
+  handle /api/world/* {
+    reverse_proxy 127.0.0.1:4000
+  }
+
+  # WORLD page handling
+  handle /world/* {
+    header Cache-Control "no-cache, no-store, must-revalidate"
+    reverse_proxy 127.0.0.1:3001
+  }
+
+  # FluffyBento link-in-bio page (static files in /var/www/FluffyBento on the server)
+  # NOTE: no lowercase redir — Caddy path matchers are case-insensitive,
+  # so `redir /fluffybento /FluffyBento` catches /FluffyBento too (redirect loop).
+  handle /FluffyBento* {
+    root * /var/www
+    file_server
+  }
+  handle /limitlos* {
+    root * /var/www
+    file_server
+  }
+  handle /tson* {
+    root * /var/www
+    file_server
+  }
+  handle /erhaltunq* {
+    root * /var/www
+    file_server
+  }
+  handle /rixhi* {
+    root * /var/www
+    file_server
+  }
+  handle /zerocraft* {
+    root * /var/www
+    file_server
+  }
+  handle /irongirl* {
+    root * /var/www
+    file_server
+  }
 
   # Fallback: the public website (React-SPA) on port 3001.
   reverse_proxy 127.0.0.1:3001
