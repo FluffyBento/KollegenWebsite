@@ -122,7 +122,7 @@ function topBarHtml(current) {
     { label: 'Spielen', pages: [
       { href: '/minecraft', label: 'Minecraft' },
       { href: '/clicker', label: 'Clicker' },
-      { href: '/world/', label: 'WORLD' },
+      { href: '/borsim', label: 'BörseSim' },
     ] },
     { label: 'Community', pages: [
       { href: '/kollegenawards', label: 'Awards', hideSm: true },
@@ -334,7 +334,7 @@ module.exports = function registerProfilModule(app, getSession) {
         id: session.id,
         username: session.username || '',
         global_name: session.global_name || session.username || '',
-        avatarUrl: session.avatarUrl || '',
+        avatarUrl: session.avatarUrl || data.avatar || '',
         isAdmin: isAdmin(session),
       },
       discordId: String(session.id),
