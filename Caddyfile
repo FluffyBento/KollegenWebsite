@@ -16,7 +16,7 @@ kollegen.me {
   reverse_proxy /groups* 127.0.0.1:8080
   reverse_proxy /group* 127.0.0.1:8080
   reverse_proxy /call* 127.0.0.1:8080
-  reverse_proxy /store* 127.0.0.1:8080
+  reverse_proxy /api/store* 127.0.0.1:8080
 
   # WORLD: Socket.IO path must be preserved (handle vs handle_path).
   # "handle" keeps the full path prefix; "handle_path" strips it.
