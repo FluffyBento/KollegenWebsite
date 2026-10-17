@@ -122,7 +122,7 @@ function topBarHtml(current) {
     { label: 'Spielen', pages: [
       { href: '/minecraft', label: 'Minecraft' },
       { href: '/clicker', label: 'Clicker' },
-      { href: '/borsim', label: 'BörseSim' },
+      // { href: '/borsim', label: 'BörseSim' },
     ] },
     { label: 'Community', pages: [
       { href: '/kollegenawards', label: 'Awards', hideSm: true },
@@ -1088,8 +1088,8 @@ function buildProfilPage() {
     '}else{pv.style.display="none";}' +
     '}' +
     'var groups=$("editGroups");groups.innerHTML="";' +
-    'var order=["title","badge","avatar_theme","avatar_frame","profile_bg","profile_frame","banner","sticker","name_color","font","profil_stil"];' +
-    'var catNames={title:"Titel",badge:"Abzeichen",avatar_theme:"Avatar-Hintergrund",avatar_frame:"Avatar-Rahmen",profile_bg:"Profil-Hintergrund",profile_frame:"Profil-Rahmen",banner:"Banner",sticker:"Aufkleber",name_color:"Namensfarbe",font:"Schriftart",profil_stil:"Profilstil"};' +
+    'var order=["title","badge","avatar_theme","avatar_frame","profile_bg","profile_frame","banner","sticker","name_color","font","profil_stil","mace"];' +
+    'var catNames={title:"Titel",badge:"Abzeichen",avatar_theme:"Avatar-Hintergrund",avatar_frame:"Avatar-Rahmen",profile_bg:"Profil-Hintergrund",profile_frame:"Profil-Rahmen",banner:"Banner",sticker:"Aufkleber",name_color:"Namensfarbe",font:"Schriftart",profil_stil:"Profilstil",mace:"Kriegshammer"};' +
     'var owned=p.cosmetics||[];' +
     'for(var oi=0;oi<order.length;oi++){' +
     'var cat=order[oi];' +
@@ -1310,6 +1310,7 @@ function buildStorePage() {
     '<button type="button" class="tab" data-f="profile_bg">Profil-Hintergrund</button>' +
     '<button type="button" class="tab" data-f="banner">Banner</button>' +
     '<button type="button" class="tab" data-f="profil_stil">Profilstil</button>' +
+    '<button type="button" class="tab" data-f="mace">Kriegshammer</button>' +
     '</div>' +
     '<div class="grid" id="grid"><div class="muted" id="gridMsg">Lade Store\u2026</div></div>' +
     '<div class="note card"><span style="font-size:1.2rem;">&#9432;</span>' +
